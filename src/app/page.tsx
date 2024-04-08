@@ -6,7 +6,7 @@ import supabase from "@/utils/supabase";
 
 export default async function Home() {
   const { data } = await supabase.storage.from("predictions").list('', {
-    limit: 100,
+    limit: 25,
     sortBy: { column: 'name', order: 'desc' },
   })
 
