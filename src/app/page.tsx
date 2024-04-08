@@ -1,3 +1,7 @@
+
+export const dynamic = 'force-dynamic'
+
+
 import supabase from "@/utils/supabase";
 
 export default async function Home() {
