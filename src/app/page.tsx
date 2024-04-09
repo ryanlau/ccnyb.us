@@ -10,7 +10,7 @@ export default async function Home() {
     sortBy: { column: 'name', order: 'desc' },
   })
 
-  console.log(data)
+  const images = data!.filter((image) => image.metadata !== null)
 
   return (
     <div className="p-8">
@@ -19,8 +19,7 @@ export default async function Home() {
       </div>
 
       <div className="mt-4 flex flex-col gap-8">
-        {data!.map((image, i) => {
-          if (image.metadata.mimetype === 'application/octet-stream') return
+        {images.map((image, i) => {
           return (
             <div key={i} className="text-2xl">
               {image.name}
