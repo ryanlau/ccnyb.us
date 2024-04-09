@@ -1,8 +1,14 @@
 
+import type { Metadata } from 'next'
 export const dynamic = 'force-dynamic'
 
 
 import supabase from "@/utils/supabase";
+
+export const metadata: Metadata = {
+  title: 'CCNY Bus Tracker',
+  description: "Never guess when the shuttle bus is coming again.",
+}
 
 export default async function Home() {
   const { data } = await supabase.storage.from("predictions").list('', {
