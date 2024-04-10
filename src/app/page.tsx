@@ -40,7 +40,7 @@ export default async function Home() {
           return (
             <div key={i} className="text-2xl">
               {image.name}
-              <img src={"https://xgxntawymgcwzpgmkuzk.supabase.co/storage/v1/object/public/predictions/" + image.name} alt="" />
+              <img src={"https://xgxntawymgcwzpgmkuzk.supabase.co/storage/v1/object/public/predictions/" + formattedDate + "/" + image.name} alt="" />
             </div>
           )
         })}
