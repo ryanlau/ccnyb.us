@@ -1,7 +1,5 @@
-
 import type { Metadata } from 'next'
 export const dynamic = 'force-dynamic'
-
 
 import supabase from "@/utils/supabase";
 
@@ -11,7 +9,20 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  const { data } = await supabase.storage.from("predictions").list('', {
+  const date = new Date();
+
+  // Convert to EST date with custom format YYYY_MM_DD
+  const estDate = date.toLocaleDateString("en-US", {
+    timeZone: "America/New_York",
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).split("/");
+
+  const formattedDate = `${estDate.at(2)}_${estDate.at(0)}_${estDate.at(1)}`;
+
+
+  const { data } = await supabase.storage.from("predictions").list(formattedDate, {
     limit: 25,
     sortBy: { column: 'name', order: 'desc' },
   })
