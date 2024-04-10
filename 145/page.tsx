@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next'
 export const dynamic = 'force-dynamic'
 
@@ -20,7 +21,7 @@ export default async function Home() {
     day: '2-digit'
   }).split("/");
 
-  const formattedDate = `125/${estDate.at(2)}_${estDate.at(0)}_${estDate.at(1)}`;
+  const formattedDate = `145/${estDate.at(2)}_${estDate.at(0)}_${estDate.at(1)}`;
 
 
   const { data } = await supabase.storage.from("predictions").list(formattedDate, {
