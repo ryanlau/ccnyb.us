@@ -20,13 +20,15 @@ export default async function Home() {
     day: '2-digit'
   }).split("/");
 
-  const formattedDate = `125/${estDate.at(2)}_${estDate.at(0)}_${estDate.at(1)}`;
+  const formattedDate = `${estDate.at(2)}_${estDate.at(0)}_${estDate.at(1)}/125`;
 
 
   const { data } = await supabase.storage.from("predictions").list(formattedDate, {
     limit: 25,
     sortBy: { column: 'name', order: 'desc' },
   })
+
+  console.log(data)
 
   const images = data!.filter((image) => image.metadata !== null)
 
