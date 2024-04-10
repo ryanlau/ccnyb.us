@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 export const dynamic = 'force-dynamic'
 
 import supabase from "@/utils/supabase";
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'CCNY Bus Tracker',
@@ -36,11 +37,16 @@ export default async function Home() {
       </div>
 
       <div className="mt-4 flex flex-col gap-8">
+        {images.length === 0 && (
+          <div className="text-2xl">
+            no buses spotted today
+          </div>
+        )}
         {images.map((image, i) => {
           return (
             <div key={i} className="text-2xl">
               {image.name}
-              <img src={"https://xgxntawymgcwzpgmkuzk.supabase.co/storage/v1/object/public/predictions/" + formattedDate + "/" + image.name} alt="" />
+              <Image width={352} height={240} src={"https://xgxntawymgcwzpgmkuzk.supabase.co/storage/v1/object/public/predictions/" + formattedDate + "/" + image.name} alt="" />
             </div>
           )
         })}
