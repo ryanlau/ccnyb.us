@@ -5,11 +5,6 @@ import supabase from "@/utils/supabase";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "CCNY Bus Tracker",
-  description: "Never guess when the shuttle bus is coming again.",
-};
-
 export async function generateMetadata({ params }: { params: { stop: string } }): Promise<Metadata> {
   const { stop } = params
 
