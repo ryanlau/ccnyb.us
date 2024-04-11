@@ -24,9 +24,11 @@ export default async function Home() {
             <div className="text-2xl font-bold">
               125
             </div>
+            {/*
             <div className="font-normal text-base underline text-gray-600 dark:text-gray-400">
               <Link href="/125"> view more photos </Link>
             </div>
+            */}
           </div>
           <ImageCarousel stop="125" />
         </div>
@@ -37,9 +39,11 @@ export default async function Home() {
             <div className="text-2xl font-bold">
               145
             </div>
+            {/*
             <div className="font-normal text-base underline text-gray-600  dark:text-gray-400">
               <Link href="/145"> view more photos </Link>
             </div>
+            */}
           </div>
           <ImageCarousel stop="145" />
         </div>
@@ -51,7 +55,7 @@ export default async function Home() {
               nac/marshak
             </div>
           </div>
-          coming soon
+          support coming soon
         </div>
 
 
