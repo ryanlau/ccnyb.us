@@ -1,24 +1,24 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://ccnyb.us',
+      url: "https://ccnyb.us",
       lastModified: new Date(),
-      changeFrequency: 'always',
+      changeFrequency: "always",
       priority: 1,
     },
     {
-      url: 'https://ccnyb.us/125',
+      url: "https://ccnyb.us/125",
       lastModified: new Date(),
-      changeFrequency: 'always',
+      changeFrequency: "always",
       priority: 0.8,
     },
     {
-      url: 'https://ccnyb.us/145',
+      url: "https://ccnyb.us/145",
       lastModified: new Date(),
-      changeFrequency: 'always',
+      changeFrequency: "always",
       priority: 0.8,
     },
-  ]
+  ];
 }

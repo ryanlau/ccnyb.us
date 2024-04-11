@@ -5,15 +5,18 @@ import supabase from "@/utils/supabase";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: { stop: string } }): Promise<Metadata> {
-  const { stop } = params
+export async function generateMetadata({
+  params,
+}: {
+  params: { stop: string };
+}): Promise<Metadata> {
+  const { stop } = params;
 
   return {
     title: `${stop} Street - CCNY Bus Tracker`,
     description: "View the last 50 times the bus was spotted at this stop.",
-  }
+  };
 }
-
 
 export default async function Stop({ params }: { params: { stop: string } }) {
   const { stop } = params;

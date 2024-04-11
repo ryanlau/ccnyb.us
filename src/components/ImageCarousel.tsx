@@ -9,24 +9,21 @@ import supabase from "@/utils/supabase";
 import moment from "moment-timezone";
 import Image from "next/image";
 
-
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
 import Link from "next/link";
-
 
 function convertFilenameToTime(filename: string) {
   // Step 1: Remove the '.jpg' extension and split by '_'
-  const parts = filename.replace('.jpg', '').split('_');
+  const parts = filename.replace(".jpg", "").split("_");
 
   // Make sure the filename is in the correct format
   if (parts.length !== 3) {
-    return 'Invalid filename format';
+    return "Invalid filename format";
   }
 
   // Step 2: Parse the hours, minutes, and seconds
@@ -43,17 +40,23 @@ function convertFilenameToTime(filename: string) {
   }
 
   // Step 4: Construct the new time string with AM/PM
-  const timeString = `${hours}:${minutes}:${seconds}${isPM ? 'pm' : 'am'}`;
+  const timeString = `${hours}:${minutes}:${seconds}${isPM ? "pm" : "am"}`;
 
   return timeString;
 }
 
 function calculateTimeDifference(filename: string) {
   // Extract hours, minutes, and seconds from the filename
-  const [hours, minutes, seconds] = filename.split('.')[0].split('_').map(Number);
+  const [hours, minutes, seconds] = filename
+    .split(".")[0]
+    .split("_")
+    .map(Number);
 
   // Use moment-timezone to create a moment for the file time in EST
-  const fileTime = moment.tz({ hour: hours, minute: minutes, second: seconds }, 'America/New_York');
+  const fileTime = moment.tz(
+    { hour: hours, minute: minutes, second: seconds },
+    "America/New_York",
+  );
 
   // Generate the human-readable, relative time difference
   const result = fileTime.fromNow();
@@ -63,19 +66,23 @@ function calculateTimeDifference(filename: string) {
 
 function calculateETA(filename: string) {
   // Extract hours, minutes, and seconds from the filename
-  const [hours, minutes, seconds] = filename.split('.')[0].split('_').map(Number);
+  const [hours, minutes, seconds] = filename
+    .split(".")[0]
+    .split("_")
+    .map(Number);
 
   // Use moment-timezone to create a moment for the file time in EST
-  const fileTime = moment.tz({ hour: hours, minute: minutes, second: seconds }, 'America/New_York');
-  fileTime.add(15, 'minutes')
+  const fileTime = moment.tz(
+    { hour: hours, minute: minutes, second: seconds },
+    "America/New_York",
+  );
+  fileTime.add(15, "minutes");
 
   // Generate the human-readable, relative time difference
   const result = fileTime.fromNow();
 
   return result;
 }
-
-
 
 export default async function ImageCarousel({ stop }: { stop: string }) {
   const date = new Date();
@@ -104,7 +111,7 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
       <div className="mt-4 flex flex-col gap-8">
         <div className="text-2xl">no buses spotted today</div>
       </div>
-    )
+    );
   }
 
   const lastSeen = calculateTimeDifference(images[0].name);
@@ -112,12 +119,14 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
 
   return (
     <div className="static">
-      <div className="text-lg"> last seen:  {lastSeen} </div>
-      <div className="text-lg"> eta:  {eta} </div>
+      <div className="text-lg"> last seen: {lastSeen} </div>
+      <div className="text-lg"> eta: {eta} </div>
 
       <Accordion className="max-w-[352px]" type="single" collapsible>
         <AccordionItem value="item-1">
-          <AccordionTrigger className="text-lg pt-0 pb-1">proof</AccordionTrigger>
+          <AccordionTrigger className="text-lg pt-0 pb-1">
+            proof
+          </AccordionTrigger>
           <AccordionContent>
             <Carousel className="max-w-[352px]">
               <CarouselContent>
@@ -155,10 +164,9 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
             <div className="font-normal text-sm underline text-gray-600  dark:text-gray-400">
               <Link href={`/${stop}`}> view more photos </Link>
             </div>
-
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </div >
+    </div>
   );
 }

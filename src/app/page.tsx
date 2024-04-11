@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
-import supabase from "@/utils/supabase";
-import Image from "next/image";
 import ImageCarousel from "@/components/ImageCarousel";
 import Link from "next/link";
 
@@ -21,9 +19,7 @@ export default async function Home() {
       <div className="mt-4 flex flex-col gap-8">
         <div>
           <div className="flex gap-4 items-baseline">
-            <div className="text-2xl font-bold">
-              125
-            </div>
+            <div className="text-2xl font-bold">125</div>
             {/*
             <div className="font-normal text-base underline text-gray-600 dark:text-gray-400">
               <Link href="/125"> view more photos </Link>
@@ -33,12 +29,9 @@ export default async function Home() {
           <ImageCarousel stop="125" />
         </div>
 
-
         <div>
           <div className="flex gap-4 items-baseline">
-            <div className="text-2xl font-bold">
-              145
-            </div>
+            <div className="text-2xl font-bold">145</div>
             {/*
             <div className="font-normal text-base underline text-gray-600  dark:text-gray-400">
               <Link href="/145"> view more photos </Link>
@@ -48,21 +41,12 @@ export default async function Home() {
           <ImageCarousel stop="145" />
         </div>
 
-
         <div>
           <div className="flex gap-4 items-baseline">
-            <div className="text-2xl font-bold">
-              nac/marshak
-            </div>
+            <div className="text-2xl font-bold">nac/marshak</div>
           </div>
           support coming soon
         </div>
-
-
-
-
-
-
       </div>
     </div>
   );
