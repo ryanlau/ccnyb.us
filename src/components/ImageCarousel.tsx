@@ -66,7 +66,8 @@ function calculateETA(filename: string) {
   const [hours, minutes, seconds] = filename.split('.')[0].split('_').map(Number);
 
   // Use moment-timezone to create a moment for the file time in EST
-  const fileTime = moment.tz({ hour: hours, minute: minutes + 15, second: seconds }, 'America/New_York');
+  const fileTime = moment.tz({ hour: hours, minute: minutes, second: seconds }, 'America/New_York');
+  fileTime.add(15, 'minutes')
 
   // Generate the human-readable, relative time difference
   const result = fileTime.fromNow();
@@ -151,12 +152,12 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
             </Carousel>
 
             <div className="font-normal text-sm underline text-gray-600  dark:text-gray-400">
-              <Link href="/145"> view more photos </Link>
+              <Link href={`/${stop}`}> view more photos </Link>
             </div>
 
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </div>
+    </div >
   );
 }
