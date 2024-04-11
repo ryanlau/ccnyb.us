@@ -66,6 +66,7 @@ export default async function Stop({ params }: { params: { stop: string } }) {
                   "/" +
                   image.name
                 }
+                unoptimized={true}
                 alt=""
               />
             </div>

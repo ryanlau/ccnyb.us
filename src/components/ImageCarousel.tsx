@@ -137,6 +137,7 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
                             "/" +
                             image.name
                           }
+                          unoptimized={true}
                           alt=""
                         />
                         {delta}
