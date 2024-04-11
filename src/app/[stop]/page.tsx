@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   description: "Never guess when the shuttle bus is coming again.",
 };
 
+export async function generateMetadata({ params }: { params: { stop: string } }): Promise<Metadata> {
+  const { stop } = params
+
+  return {
+    title: `${stop} Street - CCNY Bus Tracker`,
+    description: "View the last 50 times the bus was spotted at this stop.",
+  }
+}
+
+
 export default async function Stop({ params }: { params: { stop: string } }) {
   const { stop } = params;
 
