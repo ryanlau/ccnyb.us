@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Comic_Neue } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
+
 import "./globals.css";
 
 const comic_neue = Comic_Neue({ weight: ["400", "700"], subsets: ["latin"] });
@@ -16,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={comic_neue.className}>{children}</body>
+      <body className={comic_neue.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
