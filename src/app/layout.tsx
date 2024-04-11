@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Comic_Neue } from "next/font/google";
 import "./globals.css";
 
-const comic_neue = Comic_Neue({ weight: ['400', '700'], subsets: ["latin"] });
+const comic_neue = Comic_Neue({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
