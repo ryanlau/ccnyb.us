@@ -30,6 +30,15 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
 
   const images = data!.filter((image) => image.metadata !== null);
 
+  if (images.length === 0) {
+    return (
+      <div className="mt-4 flex flex-col gap-8">
+        <div className="text-2xl">no buses spotted today</div>
+      </div>
+    )
+  }
+
+
   return (
     <div className="static">
       <Carousel className="max-w-[352px]">
@@ -41,6 +50,8 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
                   <Image
                     width={352}
                     height={240}
+                    priority={true}
+                    quality={10}
                     src={
                       "https://xgxntawymgcwzpgmkuzk.supabase.co/storage/v1/object/public/predictions/" +
                       folderPath +
