@@ -116,7 +116,7 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
 
       <Accordion className="max-w-[352px]" type="single" collapsible>
         <AccordionItem value="item-1">
-          <AccordionTrigger className="py-1">see proof</AccordionTrigger>
+          <AccordionTrigger className="text-lg pt-0 pb-1">proof</AccordionTrigger>
           <AccordionContent>
             <Carousel className="max-w-[352px]">
               <CarouselContent>
