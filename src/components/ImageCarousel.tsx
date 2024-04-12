@@ -16,6 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
+import clsx from "clsx";
 
 function convertFilenameToTime(filename: string) {
   // Step 1: Remove the '.jpg' extension and split by '_'
@@ -52,9 +53,15 @@ function calculateTimeDifference(filename: string) {
     .split("_")
     .map(Number);
 
+  // for some reason we must manually specify the current date in EST to create a correct moment time later...
+  const dateEST = moment.tz("America/New_York")
+  const month = dateEST.month(); // month is 0-indexed
+  const date = dateEST.date();
+  const year = dateEST.year();
+
   // Use moment-timezone to create a moment for the file time in EST
   const fileTime = moment.tz(
-    { hour: hours, minute: minutes, second: seconds },
+    { month: month, date: date, year: year, hour: hours, minute: minutes, second: seconds },
     "America/New_York",
   );
 
@@ -71,9 +78,16 @@ function calculateETA(filename: string) {
     .split("_")
     .map(Number);
 
+
+  // for some reason we must manually specify the current date in EST to create a correct moment time later...
+  const dateEST = moment.tz("America/New_York")
+  const month = dateEST.month(); // month is 0-indexed
+  const date = dateEST.date();
+  const year = dateEST.year();
+
   // Use moment-timezone to create a moment for the file time in EST
   const fileTime = moment.tz(
-    { hour: hours, minute: minutes, second: seconds },
+    { month: month, date: date, year: year, hour: hours, minute: minutes, second: seconds },
     "America/New_York",
   );
   fileTime.add(15, "minutes");
@@ -120,7 +134,11 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
   return (
     <div className="static">
       <div className="text-lg"> last seen: {lastSeen} </div>
-      <div className="text-lg"> eta: {eta} </div>
+      <div className="text-lg"> eta: {" "}
+        <span className={clsx(eta.includes("ago") ? "text-red-600" : "")}>
+          {eta}
+        </span>
+      </div>
 
       <Accordion className="max-w-[352px]" type="single" collapsible>
         <AccordionItem value="item-1">
