@@ -8,6 +8,7 @@ import WelcomeDialog from "@/components/WelcomeDialog";
 import { Toaster } from "@/components/ui/sonner";
 import AboutDialog from "@/components/AboutDialog";
 import FeedbackDialog from "@/components/FeedbackDialog";
+import { CSPostHogProvider } from "@/components/PostHog";
 
 const comic_neue = Comic_Neue({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -24,25 +25,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={comic_neue.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="p-8 min-h-dvh flex flex-col" >
-            {children}
+        <CSPostHogProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="p-8 min-h-dvh flex flex-col" >
+              {children}
 
-            <div className="grow"> </div>
-            <div className="text-neutral-500 dark:text-neutral-400 flex gap-8">
-              <AboutDialog />
-              <FeedbackDialog />
+              <div className="grow"> </div>
+              <div className="text-neutral-500 dark:text-neutral-400 flex gap-8">
+                <AboutDialog />
+                <FeedbackDialog />
+              </div>
+
             </div>
 
-          </div>
-
-          <WelcomeDialog />
-        </ThemeProvider>
+            <WelcomeDialog />
+          </ThemeProvider>
+        </CSPostHogProvider>
         <Analytics />
         <Toaster />
       </body>
