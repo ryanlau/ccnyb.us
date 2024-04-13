@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
+import WelcomeDialog from "@/components/WelcomeDialog";
 
 const comic_neue = Comic_Neue({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -27,6 +28,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+
+          <WelcomeDialog />
         </ThemeProvider>
         <Analytics />
       </body>

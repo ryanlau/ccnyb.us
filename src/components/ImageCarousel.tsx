@@ -122,9 +122,7 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
 
   if (images.length === 0) {
     return (
-      <div className="mt-4 flex flex-col gap-8">
-        <div className="text-2xl">no buses spotted today</div>
-      </div>
+      <div className="">no buses spotted today</div>
     );
   }
 
