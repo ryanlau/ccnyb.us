@@ -29,7 +29,7 @@ export default function WelcomeDialog() {
 
   return (
     <>
-      <Dialog open={true}>
+      <Dialog open={false}>
         <DialogContent className="mx-6">
           <DialogHeader>
             <DialogTitle>Are you absolutely sure?</DialogTitle>
