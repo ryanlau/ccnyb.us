@@ -178,7 +178,7 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
             </Carousel>
 
             <div className="font-normal text-sm underline text-gray-600  dark:text-gray-400">
-              <Link href={`/${stop}`}> view more photos </Link>
+              <Link href={`/stop/${stop}`}> view more photos </Link>
             </div>
           </AccordionContent>
         </AccordionItem>
