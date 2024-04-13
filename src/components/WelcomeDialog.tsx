@@ -33,7 +33,7 @@ export default function WelcomeDialog() {
           <DialogHeader>
             <DialogTitle className='text-start'>thank you for using ccnyb.us!</DialogTitle>
             <DialogDescription className='text-start text-pretty'>
-              this site is powered by an ai model that detects the shuttle bus on public camera feeds. <br /> <br /> the model is fairly accurate, but not perfect, so we encourage you to verify that the bus was correctly detected. we are continuously making improvements and hope that this won't be necessary in the near future.
+              this site is powered by an ai model that detects the shuttle bus on public camera feeds. <br /> <br /> the model is fairly accurate, but not perfect, so we encourage you to verify that the bus was correctly detected. we are continuously making improvements and hope that this won&apos;t be necessary in the near future.
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
