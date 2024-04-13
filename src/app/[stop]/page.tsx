@@ -47,7 +47,7 @@ export default async function Stop({ params }: { params: { stop: string } }) {
   const images = data!.filter((image) => image.metadata !== null);
 
   return (
-    <div className="p-8">
+    <div className="">
       <div className="text-4xl font-bold tracking-wide">
         times i saw the bus at {stop}
       </div>

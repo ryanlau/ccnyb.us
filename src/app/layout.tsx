@@ -5,6 +5,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 import WelcomeDialog from "@/components/WelcomeDialog";
+import { Toaster } from "@/components/ui/sonner";
+import AboutDialog from "@/components/AboutDialog";
+import FeedbackDialog from "@/components/FeedbackDialog";
 
 const comic_neue = Comic_Neue({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -27,11 +30,21 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="p-8 min-h-dvh flex flex-col" >
+            {children}
+
+            <div className="grow"> </div>
+            <div className="text-neutral-500 dark:text-neutral-400 flex gap-8">
+              <AboutDialog />
+              <FeedbackDialog />
+            </div>
+
+          </div>
 
           <WelcomeDialog />
         </ThemeProvider>
         <Analytics />
+        <Toaster />
       </body>
     </html>
   );

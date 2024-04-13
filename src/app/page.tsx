@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <div className="p-8">
+    <div className="">
       <div className="text-4xl font-bold tracking-wide">
         <Link href="/">ccnyb.us</Link>
       </div>
@@ -48,6 +48,9 @@ export default async function Home() {
           support coming soon
         </div>
       </div>
+
+
+
     </div>
   );
 }
