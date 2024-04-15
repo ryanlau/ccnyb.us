@@ -13,8 +13,37 @@ export async function generateMetadata({
   const { stop } = params;
 
   return {
-    title: `${stop} Street - CCNY Bus Tracker`,
+    title: `${stop}th Street - CCNY Bus Tracker`,
     description: "View the last 50 times the bus was spotted at this stop.",
+    keywords: [
+      "CCNY",
+      "ccny",
+      "city college",
+      "city college of new york",
+      "shuttle",
+      "bus",
+      "shuttle bus",
+      "tracker",
+      "campus",
+      "transportation",
+      "schedule",
+      "route",
+      "live",
+      "real-time",
+      "map",
+      "GPS",
+      "location",
+      "service",
+      "timetable",
+      "stop",
+      "arrival",
+      "departure",
+      "status",
+      "update",
+      "mobile",
+      "students",
+      "faculty",
+    ]
   };
 }
 
@@ -48,17 +77,17 @@ export default async function Stop({ params }: { params: { stop: string } }) {
 
   return (
     <div className="pb-8">
-      <div className="text-4xl font-bold tracking-wide">
-        times i saw the bus at {stop}
+      <div className="mt-4 text-2xl font-bold">
+        {stop}
       </div>
 
-      <div className="mt-4 flex flex-col gap-8">
+      <div className="flex flex-col gap-8">
         {images.length === 0 && (
-          <div className="text-2xl">no buses spotted today</div>
+          <div className="">no buses spotted today</div>
         )}
         {images.map((image, i) => {
           return (
-            <div key={i} className="text-2xl">
+            <div key={i} className="">
               {image.name}
               <Image
                 width={352}

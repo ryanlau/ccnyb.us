@@ -2,19 +2,44 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 import ImageCarousel from "@/components/ImageCarousel";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "CCNY Bus Tracker",
   description: "Never guess when the shuttle bus is coming again.",
+  keywords: [
+    "CCNY",
+    "ccny",
+    "city college",
+    "city college of new york",
+    "shuttle",
+    "bus",
+    "shuttle bus",
+    "tracker",
+    "campus",
+    "transportation",
+    "schedule",
+    "route",
+    "live",
+    "real-time",
+    "map",
+    "GPS",
+    "location",
+    "service",
+    "timetable",
+    "stop",
+    "arrival",
+    "departure",
+    "status",
+    "update",
+    "mobile",
+    "students",
+    "faculty",
+  ]
 };
 
 export default async function Home() {
   return (
     <div className="pb-8">
-      <div className="text-4xl font-bold tracking-wide">
-        <Link href="/">ccnyb.us</Link>
-      </div>
 
       <div className="mt-4 flex flex-col gap-8">
         <div>

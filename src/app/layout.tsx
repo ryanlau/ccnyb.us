@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/sonner";
 import AboutDialog from "@/components/AboutDialog";
 import FeedbackDialog from "@/components/FeedbackDialog";
 import { CSPostHogProvider } from "@/components/PostHog";
+import Link from "next/link";
 
 const comic_neue = Comic_Neue({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -32,6 +33,9 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="p-8 min-h-dvh flex flex-col" >
+              <div className="text-4xl font-bold tracking-wide">
+                <Link href="/">ccnyb.us</Link>
+              </div>
               {children}
 
               <div className="grow"> </div>
