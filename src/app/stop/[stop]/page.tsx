@@ -93,7 +93,8 @@ export default async function Stop({ params }: { params: { stop: string } }) {
                 width={352}
                 height={240}
                 src={
-                  "https://xgxntawymgcwzpgmkuzk.supabase.co/storage/v1/object/public/predictions/" +
+                  process.env.SUPABASE_URL! +
+                  "/storage/v1/object/public/predictions/" +
                   folderPath +
                   "/" +
                   image.name

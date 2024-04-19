@@ -157,7 +157,8 @@ export default async function ImageCarousel({ stop }: { stop: string }) {
                           priority={true}
                           quality={30}
                           src={
-                            "https://xgxntawymgcwzpgmkuzk.supabase.co/storage/v1/object/public/predictions/" +
+                            process.env.SUPABASE_URL! +
+                            "/storage/v1/object/public/predictions/" +
                             folderPath +
                             "/" +
                             image.name
