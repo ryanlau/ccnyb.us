@@ -13,6 +13,6 @@ export function CSPostHogProvider({ children }: { children: React.ReactNode }) {
   if (process.env.NODE_ENV === 'production') {
     return <PostHogProvider client={posthog}>{children}</PostHogProvider>
   } else {
-    return { children }
+    return <>{children}</>
   }
 }
