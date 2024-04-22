@@ -90,7 +90,7 @@ function calculateETA(filename: string) {
     { month: month, date: date, year: year, hour: hours, minute: minutes, second: seconds },
     "America/New_York",
   );
-  fileTime.add(15, "minutes");
+  fileTime.add(30, "minutes");
 
   // Generate the human-readable, relative time difference
   const result = fileTime.fromNow();
