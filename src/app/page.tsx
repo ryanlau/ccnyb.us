@@ -45,23 +45,16 @@ export default async function Home() {
           <div className='flex gap-4 items-baseline'>
             <div className='text-2xl font-bold'>125</div>
           </div>
-          <ImageCarousel stop='125' />
+          DOT switched camera direction 😡
+          {/* <ImageCarousel stop='125' /> */}
         </div>
 
-        {/* if 145 camera working frontend code */}
-        {/* <div>
+        <div>
           <div className='flex gap-4 items-baseline'>
             <div className='text-2xl font-bold'>145</div>
           </div>
+          {/* DOT switched camera direction 😡 */}
           <ImageCarousel stop='145' />
-        </div> */}
-
-        {/* 145 camera not working */}
-        <div>
-          <div className='flex gap-4 items-baseline'>
-            <div className='text-2xl font-bold'>145 [not working]</div>
-          </div>
-          DOT switched camera direction 😡
         </div>
 
         <div>
