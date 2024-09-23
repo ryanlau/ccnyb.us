@@ -1,0 +1,13 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "backend service for fetching camera images and running inference"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "inference>=0.17.1",
+    "pytz>=2024.1",
+    "requests>=2.31.0",
+    "roboflow>=1.1.44",
+    "supabase>=2.7.4",
+]
